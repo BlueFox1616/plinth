@@ -1,10 +1,10 @@
-import { Ok, Error } from "./gleam.mjs";
+import { Result$Ok, Result$Error } from "./gleam.mjs";
 
 export async function share(data) {
   try {
-    return new Ok(await navigator.share(data));
+    return Result$Ok(await navigator.share(data));
   } catch (error) {
-    return new Error(error.toString());
+    return Result$Error(error.toString());
   }
 }
 

@@ -8,7 +8,7 @@ pub type ShareData {
     title: Option(String),
     text: Option(String),
     url: Option(String),
-    files: Array(File),
+    files: Option(Array(File)),
   )
 }
 

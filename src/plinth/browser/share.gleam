@@ -20,13 +20,13 @@ pub fn new(
 ) -> ShareData
 
 @external(javascript, "../../share_ffi.mjs", "title")
-pub fn title(data: ShareData) -> Option(String)
+pub fn title(data: ShareData) -> Result(String, Nil)
 
 @external(javascript, "../../share_ffi.mjs", "text")
-pub fn text(data: ShareData) -> Option(String)
+pub fn text(data: ShareData) -> Result(String, Nil)
 
 @external(javascript, "../../share_ffi.mjs", "url")
-pub fn url(data: ShareData) -> Option(String)
+pub fn url(data: ShareData) -> Result(String, Nil)
 
 @external(javascript, "../../share_ffi.mjs", "files")
 pub fn files(data: ShareData) -> Array(File)

@@ -1,8 +1,6 @@
 
 import { Result$Ok, Result$Error } from "./gleam.mjs";
 import {
-  Option$Some,
-  Option$None,
   unwrap,
 } from "../gleam_stdlib/gleam/option.mjs";
 
@@ -15,15 +13,15 @@ export function new_(title, text, url, files) {
   };
 }
 export function title(data) {
-  return data.title == null ? Option$None() : Option$Some(data.title);
+  return data.title != null ? Result$Ok(data.title) : Result$Error(undefined);
 }
 
 export function text(data) {
-  return data.text == null ? Option$None() : Option$Some(data.text);
+  return data.text != null ? Result$Ok(data.text) : Result$Error(undefined);
 }
 
 export function url(data) {
-  return data.url == null ? Option$None() : Option$Some(data.url);
+  return data.url != null ? Result$Ok(data.url) : Result$Error(undefined);
 }
 export function files(data) {
   return data.files ?? [];
